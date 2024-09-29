@@ -25,6 +25,7 @@ import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
 import FormSubmission from './collections/FormSubmission'
 import Study from './collections/Study'
+import CategoryCustom from './collections/Category-custom'
 
 const generateTitle: GenerateTitle = () => {
   return 'My Website'
@@ -66,7 +67,18 @@ export default buildConfig({
     url: process.env.DATABASE_URI,
   }),
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  collections: [Pages, Posts, Projects, Media, Categories, Users, Comments, FormSubmission, Study],
+  collections: [
+    Pages,
+    Posts,
+    Projects,
+    Media,
+    Categories,
+    Users,
+    Comments,
+    FormSubmission,
+    Study,
+    CategoryCustom,
+  ],
   globals: [Settings, Header, Footer],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
